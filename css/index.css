@@ -1,0 +1,230 @@
+:root{
+   --mainColor: linear-gradient(20deg, rgba(255, 0, 0, 0.6) , rgba(0, 0, 255, 0.6));
+}
+
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   overflow-x: hidden;
+   transition: 0.3s;
+}
+
+body{
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   background-color: white;
+   position: relative;
+}
+
+.firstDiv{
+   width: 100%;
+   height: 35vh;
+   background: var(--mainColor);
+}
+
+.secondDiv{
+   width: 100%;
+   height: 65vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.mainDiv{
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   top: 0%;
+   background-color: transparent;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.mainDiv .mainSection{
+   width: 60%;
+   min-height: 100vh;
+   background-color: transparent;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding-inline: 20px;
+}
+
+.mainDiv .mainSection>section, .mainDiv .mainSection>form{
+   width: 100%;
+}
+
+.mainDiv .mainSection .title{
+   padding-top: 10vh;
+   margin-bottom: 10px;
+}
+
+.mainDiv .mainSection .title>h1{
+   font-size: 2rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   letter-spacing: 5px;
+   font-weight: 500;
+   color: white;
+}
+
+.mainDiv .mainSection .addTask{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-block: 10px;
+   border-radius: 5px;
+}
+
+.mainDiv .mainSection .addTask>input[type='text']{  
+   width: 85%;
+   height: 50px;
+   outline: none;
+   border: 1.5px solid white;
+   padding-left: 20px;
+}
+
+.mainDiv .mainSection .addTask>input[type='text']:focus{
+   border: 1.5px solid grey;
+   border-right: 1.5px solid white;
+}
+
+.mainDiv .mainSection .addTask>input[type='submit']{
+   width: 15%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: x-large;
+   font-weight: bolder;
+   color: white;
+   background: var(--mainColor);
+   border: none;
+}
+
+.mainDiv .mainSection .addTask>input[type='submit']:hover{
+   cursor: pointer;
+   color: rgb(225, 225, 225);
+}
+
+.mainDiv .mainSection .allTask{
+   max-height: 65vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   margin-block: 10px;
+   background-color: white;
+   box-shadow: 0px 0px 20px silver;
+   border-radius: 5px;
+   overflow: auto;
+}
+
+.mainDiv .mainSection .allTask>section, .mainDiv .mainSection .allTask>form{
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-shrink: 0;
+}
+
+.mainDiv .mainSection .allTask .task>p{
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+
+.mainDiv .mainSection .allTask .task>p, .mainDiv .mainSection .allTask .task>input{
+   padding: 15px;
+   width: 80%;
+   min-height: 50px;
+   border: none;
+   border-top: 1px solid silver;
+   border-bottom: 1px solid silver;
+   font-size: medium;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: rgba(0, 0, 0, 0.85);
+   border-left: 2px solid white;
+}
+
+.mainDiv .mainSection .allTask .task>input{
+   border-left: 2px solid silver;
+}
+
+.mainDiv .mainSection .allTask .task>input:focus{
+   outline: none;
+}
+
+.mainDiv .mainSection .allTask .task .buttons{
+   width: 20%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.mainDiv .mainSection .allTask .task .buttons>span{
+   width: 50%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   cursor: pointer;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   border-radius: 5px;
+}
+
+.mainDiv .mainSection .allTask .task .buttons .edit{
+   background-color: rgba(0, 0, 255, 0.75);
+}
+
+.mainDiv .mainSection .allTask .task .buttons .update{
+   background-color: rgb(0, 100, 0, 0.75);
+}
+
+.mainDiv .mainSection .allTask .task .buttons .delete, .mainDiv .mainSection .allTask .task .buttons .cancel{
+   background-color: rgba(255, 0, 0, 0.75);
+}
+
+.mainDiv .mainSection .allTask .task .buttons>span:hover{
+   color: rgb(225, 225, 225);
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+   .mainDiv .mainSection .allTask .task .buttons>span{
+      font-size: small;
+   }
+}
+
+
+@media only screen and (max-width: 500px) {
+   .mainDiv .mainSection{
+      width: 95%;
+   }
+
+   .mainDiv .mainSection .allTask .task>p, .mainDiv .mainSection .allTask .task>input{
+      width: 70%;
+      font-size: small;
+   }
+
+   .mainDiv .mainSection .allTask .task .buttons{
+      width: 30%;
+   }
+
+   .mainDiv .mainSection .allTask .task .buttons>span{
+      font-size: smaller;
+   }
+}

@@ -1,6 +1,6 @@
 # Simple ToDo List: Quicky
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A simple ToDo List application named "Quicky," allowing users to create, read, edit, delete, and update tasks. Built with HTML, CSS, JavaScript, and PHP. Utilizes asynchronous JavaScript for seamless interactions with the server.
 

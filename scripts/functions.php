@@ -1,10 +1,13 @@
 <?php
 
-function addItem($input){
+function addItem($text){
    global $connection;
 
-   $query = "INSERT INTO `todo`(`body`) VALUES( '$input')";
-   $result = $connection->query($query);
+   $query = "INSERT INTO `todo` (`body`) VALUES (?)";
+   $stmt = $connection->prepare($query);
+   $stmt->bind_param("s", $text);
+   $result = $stmt->execute();
+   $stmt->close();
 
    return $result;
 }
@@ -23,8 +26,11 @@ function get_all_items(){
 function update_todo($id, $text){
    global $connection;
 
-   $query = "UPDATE `todo` set `body` = '$text' WHERE `id` = '$id'";
-   $result = $connection->query($query);
+   $query = "UPDATE `todo` set `body` = ? WHERE `id` = ?";
+   $stmt = $connection->prepare($query);
+   $stmt->bind_param("si", $text, $id);
+   $result = $stmt->execute();
+   $stmt->close();
 
    return $result;
 }
@@ -35,6 +41,12 @@ function delete_todo($id){
 
    $query = "DELETE FROM todo WHERE id = '$id'";
    $result = $connection->query($query);
+
+   $query = "DELETE FROM `todo` WHERE `id` = ?";
+   $stmt = $connection->prepare($query);
+   $stmt->bind_param("i", $id);
+   $result = $stmt->execute();
+   $stmt->close();
 
    return $result;
 }

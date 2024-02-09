@@ -27,7 +27,7 @@ A simple ToDo List application named "Quicky," allowing users to create, read, e
 ![Screenshot 1](img/screenshots/screenshot-1.png)
 ![Screenshot 2](img/screenshots/screenshot-2.png)
 
-<!-- For a closer look, check out the [live demo](https://okafor-chiagozie.github.io/Quicky) or clone the repository and open the `index.html` file in your web browser. -->
+For a closer look, check out the [live demo](http://quicky.infinityfreeapp.com/) or clone the repository and open the `index.html` file in your web browser.
 
 ## Getting Started
 1. Clone the repository
